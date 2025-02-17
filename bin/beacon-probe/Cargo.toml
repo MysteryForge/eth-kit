@@ -1,0 +1,40 @@
+[package]
+name = "beacon-probe"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# tasks
+tokio = { version = "1", features = ["full"] }
+
+# tracing
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# cli
+beacon-probe-cmd.workspace = true
+clap = { version = "4", features = ["derive", "env"] }
+
+# error handling
+eyre = "0.6"
+
+# echo server
+beacon-probe-echo.workspace = true
+
+# metrics
+eth-kit-metrics.workspace = true
+
+[features]
+default = []
+
+[[bin]]
+name = "beacon-probe"
+path = "src/main.rs"
