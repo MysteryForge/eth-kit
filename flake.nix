@@ -28,12 +28,8 @@
             pkgs.gcc
             (pkgs.rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" ];
-              targets = [ "arm-unknown-linux-gnueabihf" ];
             })
-            pkgs.cargo
             pkgs.rust-analyzer # language server
-            pkgs.clippy # linter
-            pkgs.rustfmt # formatter
             pkgs.gitAndTools.git-absorb
             pkgs.treefmt
           ];
