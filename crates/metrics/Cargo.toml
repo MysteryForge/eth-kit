@@ -1,0 +1,37 @@
+[package]
+name = "eth-kit-metrics"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# tasks
+tokio = { version = "1", features = ["full"] }
+
+# http
+hyper = { version = "1", features = ["full"] }
+hyper-util = { version = "0.1", features = ["full"] }
+http = "1"
+
+# error handling
+eyre = "0.6"
+
+# tracing
+tracing = "0.1"
+
+# metrics
+metrics = "0.24.1"
+metrics-derive = "0.1"
+metrics-exporter-prometheus = "0.16.0"
+metrics-process = "2.4.0"
+metrics-util = { version = "0.18.0", default-features = false }
+
+[features]
+default = []

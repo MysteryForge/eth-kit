@@ -1,0 +1,13 @@
+# exclude everything
+*
+
+# include only the necessary files
+
+!/bin
+!/crates
+!Cargo.toml
+!Cargo.lock
+
+# include license
+
+!LICENSE

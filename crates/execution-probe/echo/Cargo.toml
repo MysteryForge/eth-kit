@@ -1,0 +1,46 @@
+[package]
+name = "execution-probe-echo"
+version = "0.0.1"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# tasks
+tokio = { version = "1", features = ["full"] }
+
+# http
+hyper = { version = "1", features = ["full"] }
+hyper-util = { version = "0.1", features = ["full"] }
+http = "1"
+http-body-util = "0.1"
+bytes = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# rpc client
+jsonrpsee = { version = "0.24", features = ["client-core", "http-client"] }
+jsonrpsee-types = "0.24"
+
+# ethereum
+alloy-rpc-types-eth = "0.8"
+alloy-primitives = "0.8"
+
+# error handling
+eyre = "0.6"
+
+# tracing
+tracing = "0.1"
+
+# metrics
+metrics = "0.24"
+eth-kit-metrics.workspace = true
+
+[features]
+default = []

@@ -1,0 +1,36 @@
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.83"
+license = "MIT OR Apache-2.0"
+homepage = "https://mysteryforge.xyz"
+repository = "https://github.com/MysteryForge/eth-kit"
+exclude = [".github/", ".direnv/"]
+
+[workspace]
+members = [
+    "bin/execution-probe",
+    "bin/beacon-probe",
+    "crates/metrics",
+    "crates/execution-probe/echo",
+    "crates/execution-probe/cmd",
+]
+resolver = "2"
+
+[workspace.lints]
+rust.missing_debug_implementations = "warn"
+rust.missing_docs = "warn"
+rust.rust_2018_idioms = { level = "deny", priority = -1 }
+rust.unreachable_pub = "warn"
+rust.unused_must_use = "deny"
+rustdoc.all = "warn"
+# rust.unnameable-types = "warn"
+
+[workspace.dependencies]
+execution-probe = { path = "bin/execution-probe" }
+beacon-probe = { path = "bin/beacon-probe" }
+eth-kit-metrics = { path = "crates/metrics" }
+execution-probe-echo = { path = "crates/execution-probe/echo" }
+execution-probe-cmd = { path = "crates/execution-probe/cmd" }
+beacon-probe-echo = { path = "crates/beacon-probe/echo" }
+beacon-probe-cmd = { path = "crates/beacon-probe/cmd" }
